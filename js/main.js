@@ -1,12 +1,3 @@
-var EB = EB || {};
-
-
-
-
-
-
-////////////////////////
-
 $(document).ready(function() {
 
   var owl = $('.content');
