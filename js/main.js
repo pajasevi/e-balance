@@ -24,6 +24,7 @@ $(document).ready(function() {
 
   $('#main-menu').on('click', 'li', function() {
     var item = $(this).data('section');
+    $('#main-menu li').removeClass('active');
     $(this).addClass('active');
     owl.trigger('owl.goTo', item);
   });
