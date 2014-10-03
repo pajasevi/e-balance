@@ -20,4 +20,7 @@ $(document).ready(function() {
     owl.trigger('owl.goTo', item);
   });
 
+  $('#jak-pracujeme .cloud10 .arrow').on('click', function() {$('#jak-pracujeme .cloud11').fadeIn()});
+  $('#jak-pracujeme .cloud11 .arrow').on('click', function() {$('#jak-pracujeme .cloud12').fadeIn()});
+
 });
