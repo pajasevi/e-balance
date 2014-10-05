@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var owl = $('.content');
+  window.owl = $('.content');
 
   owl.owlCarousel({
     navigation : true,
@@ -10,17 +10,47 @@ $(document).ready(function() {
     singleItem: true,
     rewindNav: false,
     navigationText: ['předchozí', 'další'],
-    addClassActive: true
+    addClassActive: true,
+    afterAction: function() {
+      EB.carouselChange(this);
+    }
   });
+});
 
-  $('#main-menu').on('click', 'li', function() {
-    var item = $(this).data('section');
+
+///////////////////////////////////
+
+
+/**
+ * @namespace EB
+ *
+ * Applications controlling the page behavior.
+ */
+var EB = {
+  showTarget: function(element) {
+    var target = $(element).data('target');
+    $(target).fadeIn();
+  },
+  carouselChange: function(item) {
+    var currentItem = item.currentItem;
+    var $menu = $('#main-menu');
+    var element = $menu.children()[currentItem];
+
     $('#main-menu li').removeClass('active');
-    $(this).addClass('active');
+    $(element).addClass('active');
+  },
+  menuClick: function(item) {
+    var item = $(item).data('section');
     owl.trigger('owl.goTo', item);
-  });
+  }
+};
 
-  $('#jak-pracujeme .cloud10 .arrow').on('click', function() {$('#jak-pracujeme .cloud11').fadeIn()});
-  $('#jak-pracujeme .cloud11 .arrow').on('click', function() {$('#jak-pracujeme .cloud12').fadeIn()});
-
+/**
+ * @event handling
+ */
+$('#main-menu').on('click', 'li', function() {
+  EB.menuClick(this);
+});
+$('.cloud .arrow').on('click touchend', function() {
+  EB.showTarget(this);
 });
