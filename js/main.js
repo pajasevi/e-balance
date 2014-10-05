@@ -27,6 +27,10 @@ $(document).ready(function() {
  * Applications controlling the page behavior.
  */
 var EB = {
+  loadJump: function() {
+    var section = EB.getURLParam(window.location, 'section');
+    owl.trigger('owl.goTo', section);
+  },
   showTarget: function(element) {
     var target = $(element).data('target');
     $(target).fadeIn();
@@ -52,8 +56,7 @@ var EB = {
  * @event handling
  */
 $(window).on('load', function() {
-  var section = EB.getURLParam(window.location, 'section');
-  owl.trigger('owl.goTo', section);
+  EB.loadJump();
 });
 $('#main-menu').on('click', 'li', function() {
   EB.menuClick(this);
