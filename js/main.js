@@ -33,7 +33,9 @@ var EB = {
   },
   showTarget: function(element) {
     var target = $(element).data('target');
-    $(target).fadeIn();
+    var animation = $(element).data('animation') || 'fadeIn';
+    
+    $(target).show().addClass(animation);
   },
   carouselChange: function(item) {
     var currentItem = item.currentItem;
@@ -61,6 +63,6 @@ $(window).on('load', function() {
 $('#main-menu').on('click', 'li', function() {
   EB.menuClick(this);
 });
-$('.cloud .arrow').on('click touchend', function() {
+$('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
 });
