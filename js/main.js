@@ -39,15 +39,22 @@ var EB = {
     $('#main-menu li').removeClass('active');
     $(element).addClass('active');
   },
-  menuClick: function(item) {
-    var item = $(item).data('section');
+  menuClick: function(menu) {
+    var item = $(menu).data('section');
     owl.trigger('owl.goTo', item);
+  },
+  getURLParam: function (oTarget, sVar) {
+    return decodeURI(oTarget.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURI(sVar).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
   }
 };
 
 /**
  * @event handling
  */
+$(window).on('load', function() {
+  var section = EB.getURLParam(window.location, 'section');
+  owl.trigger('owl.goTo', section);
+});
 $('#main-menu').on('click', 'li', function() {
   EB.menuClick(this);
 });
