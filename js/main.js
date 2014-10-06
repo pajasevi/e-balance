@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var owl = $('.content');
+  window.owl = $('.content');
 
   owl.owlCarousel({
     navigation : true,
@@ -10,17 +10,59 @@ $(document).ready(function() {
     singleItem: true,
     rewindNav: false,
     navigationText: ['předchozí', 'další'],
-    addClassActive: true
+    addClassActive: true,
+    afterAction: function() {
+      EB.carouselChange(this);
+    }
   });
+});
 
-  $('#main-menu').on('click', 'li', function() {
-    var item = $(this).data('section');
+
+///////////////////////////////////
+
+
+/**
+ * @namespace EB
+ *
+ * Applications controlling the page behavior.
+ */
+var EB = {
+  loadJump: function() {
+    var section = EB.getURLParam(window.location, 'section');
+    owl.trigger('owl.goTo', section);
+  },
+  showTarget: function(element) {
+    var target = $(element).data('target');
+    var animation = $(element).data('animation') || 'fadeIn';
+    
+    $(target).show().addClass(animation);
+  },
+  carouselChange: function(item) {
+    var currentItem = item.currentItem;
+    var $menu = $('#main-menu');
+    var element = $menu.children()[currentItem];
+
     $('#main-menu li').removeClass('active');
-    $(this).addClass('active');
+    $(element).addClass('active');
+  },
+  menuClick: function(menu) {
+    var item = $(menu).data('section');
     owl.trigger('owl.goTo', item);
-  });
+  },
+  getURLParam: function (oTarget, sVar) {
+    return decodeURI(oTarget.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURI(sVar).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+  }
+};
 
-  $('#jak-pracujeme .cloud10 .arrow').on('click', function() {$('#jak-pracujeme .cloud11').fadeIn()});
-  $('#jak-pracujeme .cloud11 .arrow').on('click', function() {$('#jak-pracujeme .cloud12').fadeIn()});
-
+/**
+ * @event handling
+ */
+$(window).on('load', function() {
+  EB.loadJump();
+});
+$('#main-menu').on('click', 'li', function() {
+  EB.menuClick(this);
+});
+$('.cloud .arrow, #contact-us').on('click touchend', function() {
+  EB.showTarget(this);
 });
