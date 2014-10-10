@@ -66,3 +66,15 @@ $('#main-menu').on('click', 'li', function() {
 $('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
 });
+$('.camp .tent').hover(
+  function() {
+    var tooltip = $(this).data('tooltip')
+    var elBottom = $(this).offset().top + $(this).outerHeight() + 10;
+    var elCenter = $(this).offset().left + $(this).outerWidth() - ($(tooltip).outerWidth()/2);
+    $(tooltip).css({'top': elBottom + 'px', 'left': elCenter + 'px'}).show();
+  },
+  function() {
+    var tooltip = $(this).data('tooltip')
+    $(tooltip).hide();
+  }
+);
