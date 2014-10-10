@@ -284,6 +284,7 @@ ul.list {
 }
 #co-jsme-dokazali {
   background-image: url('../img/page4.jpg');
+  background-position: right top;
 
   .cloud13 {
     left: 40px;
@@ -319,5 +320,44 @@ ul.list {
     height: 236px;
     padding: 10px 20px 35px 20px;
     background-image: data-uri('../img/cloud15.png');
+  }
+}
+
+.camp {
+  position: absolute;
+  top: 125px;
+  right: 23%;
+  width: 200px;
+  height: 100px;
+
+  .tent {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+
+    &.yellow {
+      left: 0;
+      bottom: 0;
+      background-image: data-uri('../img/tent-yellow.png');
+    }
+    &.red {
+      left: 25%;
+      bottom: 10px;
+      background-image: data-uri('../img/tent-red.png');
+    }
+    &.green {
+      left: 50%;
+      bottom: 10px;
+      background-image: data-uri('../img/tent-green.png');
+    }
+    &.blue {
+      right: 0;
+      bottom: 0;
+      background-image: data-uri('../img/tent-blue.png');
+    }
   }
 }

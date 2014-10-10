@@ -29,12 +29,12 @@ $(document).ready(function() {
 var EB = {
   loadJump: function() {
     var section = EB.getURLParam(window.location, 'section');
-    owl.trigger('owl.goTo', section);
+    owl.trigger('owl.jumpTo', section);
   },
   showTarget: function(element) {
     var target = $(element).data('target');
     var animation = $(element).data('animation') || 'fadeIn';
-    
+
     $(target).show().addClass(animation);
   },
   carouselChange: function(item) {
