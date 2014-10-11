@@ -29,6 +29,7 @@ $(document).ready(function() {
 var EB = {
   loadJump: function() {
     var section = EB.getURLParam(window.location, 'section');
+
     owl.trigger('owl.jumpTo', section);
   },
   showTarget: function(element) {
@@ -36,6 +37,18 @@ var EB = {
     var animation = $(element).data('animation') || 'fadeIn';
 
     $(target).show().addClass(animation);
+  },
+  tooltipShow: function(element) {
+    var tooltip = $(element).data('tooltip')
+    var elBottom = $(element).offset().top + $(element).outerHeight() - 20;
+    var elCenter = $(element).offset().left + $(element).outerWidth() - ($(tooltip).outerWidth()/2) - 20;
+
+    $(tooltip).css({'top': elBottom + 'px', 'left': elCenter + 'px'}).show().addClass('fadeIn');
+  },
+  tooltipHide: function(element) {
+    var tooltip = $(element).data('tooltip');
+
+    $(tooltip).hide();
   },
   carouselChange: function(item) {
     var currentItem = item.currentItem;
@@ -47,6 +60,7 @@ var EB = {
   },
   menuClick: function(menu) {
     var item = $(menu).data('section');
+
     owl.trigger('owl.goTo', item);
   },
   getURLParam: function (oTarget, sVar) {
@@ -66,15 +80,9 @@ $('#main-menu').on('click', 'li', function() {
 $('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
 });
-$('.camp .tent').hover(
-  function() {
-    var tooltip = $(this).data('tooltip')
-    var elBottom = $(this).offset().top + $(this).outerHeight() + 10;
-    var elCenter = $(this).offset().left + $(this).outerWidth() - ($(tooltip).outerWidth()/2);
-    $(tooltip).css({'top': elBottom + 'px', 'left': elCenter + 'px'}).show();
-  },
-  function() {
-    var tooltip = $(this).data('tooltip')
-    $(tooltip).hide();
-  }
-);
+$('.camp').on('mouseover', '.tent', function() {
+  EB.tooltipShow(this)
+});
+$('.camp').on('mouseout', '.tent', function() {
+  EB.tooltipHide(this)
+});

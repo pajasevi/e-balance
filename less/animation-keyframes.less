@@ -88,3 +88,40 @@
       transform: translateY(0);
     }
 }
+
+/******* Hover-flow-shadow *******/
+
+/* Webkit syntax */
+@-webkit-keyframes hover-flow-shadow {
+    0%   {
+      -webkit-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1);
+    }
+    50%  {
+      -webkit-transform: translateY(15px) scale(0.8);
+      transform: translateY(15px) scale(0.8);
+    }
+    100% {
+      -webkit-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1);
+    }
+}
+
+/* Standard syntax */
+@keyframes hover-flow-shadow {
+    0%   {
+      -webkit-transform: translateY(0) scale(1);
+      -ms-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1);
+    }
+    50%  {
+      -webkit-transform: translateY(15px) scale(0.8);
+      -ms-transform: translateY(15px) scale(0.8);
+      transform: translateY(15px) scale(0.8);
+    }
+    100% {
+      -webkit-transform: translateY(0) scale(1);
+      -ms-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1);
+    }
+}
