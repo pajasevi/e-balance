@@ -40,7 +40,7 @@ var EB = {
   },
   tooltipShow: function(element) {
     var tooltip = $(element).data('tooltip')
-    var elBottom = $(element).offset().top + $(element).outerHeight() - 20;
+    var elBottom = $(element).offset().top + $(element).outerHeight();
     var elCenter = $(element).offset().left + $(element).outerWidth() - ($(tooltip).outerWidth()/2) - 20;
 
     $(tooltip).css({'top': elBottom + 'px', 'left': elCenter + 'px'}).show().addClass('fadeIn');
