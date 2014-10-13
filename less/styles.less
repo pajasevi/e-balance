@@ -297,6 +297,7 @@ ul.list {
   .cloud14 {
     left: 40px;
     top: 280px;
+    z-index: 1;
     width: 281px;
     height: 61px;
     padding: 20px 15px;
@@ -318,8 +319,29 @@ ul.list {
     top: 325px;
     width: 518px;
     height: 236px;
-    padding: 10px 20px 35px 20px;
+    padding: 0 20px 35px 20px;
     background-image: data-uri('../img/cloud15.png');
+
+    a {
+      color: @text-color;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    span {
+      vertical-align: middle;
+    }
+
+    .tel,
+    .mail {
+      line-height: 38px;
+    }
+
+    .dic {
+      padding-left: 30px;
+    }
   }
 }
 
@@ -409,5 +431,23 @@ ul.list {
 
   p {
     color: #fff;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &.icon-mail {
+    background-image: data-uri('../img/icon-mail.png');
+  }
+  &.icon-phone {
+    background-image: data-uri('../img/icon-phone.png');
+  }
+  &.icon-home {
+    background-image: data-uri('../img/icon-home.png');
   }
 }
