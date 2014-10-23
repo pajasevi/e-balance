@@ -16,7 +16,7 @@ var EB = {
       paginationSpeed : 1000,
       pagination: false,
       singleItem: true,
-      rewindNav: true,
+      rewindNav: false,
       navigationText: ['<img src="img/sipka2.png">', '<img src="img/sipka.png">'],
       addClassActive: true,
       afterAction: function() {
