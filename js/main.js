@@ -1,36 +1,34 @@
-$(document).ready(function() {
-
-  window.owl = $('.content');
-
-  owl.owlCarousel({
-    navigation : true,
-    slideSpeed : 1000,
-    paginationSpeed : 1000,
-    pagination: false,
-    singleItem: true,
-    rewindNav: false,
-    navigationText: ['předchozí', 'další'],
-    addClassActive: true,
-    afterAction: function() {
-      EB.carouselChange(this);
-    }
-  });
-});
-
-
-///////////////////////////////////
-
-
 /**
  * @namespace EB
  *
  * Applications controlling the page behavior.
  */
+
+var owl;
+
 var EB = {
+  initCarousel: function() {
+    owl = $('.content');
+
+    owl.owlCarousel({
+      navigation : true,
+      slideSpeed : 1000,
+      paginationSpeed : 1000,
+      pagination: false,
+      singleItem: true,
+      rewindNav: true,
+      navigationText: ['', ''],
+      addClassActive: true,
+      afterAction: function() {
+        EB.carouselChange(this);
+      }
+    });
+  },
   loadJump: function() {
     var section = EB.getURLParam(window.location, 'section');
-
-    owl.trigger('owl.jumpTo', section);
+    if (owl !== undefined) {
+      owl.trigger('owl.jumpTo', section);
+    }
   },
   showTarget: function(element) {
     var target = $(element).data('target');
@@ -71,8 +69,23 @@ var EB = {
 /**
  * @event handling
  */
+$(document).ready(function() {
+  if ($(window).innerWidth() > 991) {
+    EB.initCarousel();
+  }
+});
 $(window).on('load', function() {
   EB.loadJump();
+});
+$(window).on('resize', function() {
+  setTimeout(function() {
+    if ($(window).innerWidth() > 991) {
+      EB.initCarousel();
+    }
+    else {
+      location.reload();
+    }
+  }, 500);
 });
 $('#main-menu').on('click', 'li', function() {
   EB.menuClick(this);
