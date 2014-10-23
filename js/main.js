@@ -17,7 +17,7 @@ var EB = {
       pagination: false,
       singleItem: true,
       rewindNav: true,
-      navigationText: ['', ''],
+      navigationText: ['<img src="img/sipka2.png">', '<img src="img/sipka.png">'],
       addClassActive: true,
       afterAction: function() {
         EB.carouselChange(this);
