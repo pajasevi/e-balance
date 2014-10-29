@@ -24,6 +24,9 @@ var EB = {
       }
     });
   },
+  destroyCarousel: function() {
+    owl.data('owlCarousel').destroy();
+  },
   loadJump: function() {
     var section = EB.getURLParam(window.location, 'section');
     if (owl !== undefined) {
@@ -87,7 +90,7 @@ $(window).on('resize', function() {
       EB.initCarousel();
     }
     else {
-      location.reload();
+      EB.destroyCarousel();
     }
   }, 500);
 });
