@@ -35,6 +35,17 @@ var EB = {
       owl.trigger('owl.jumpTo', section);
     }
   },
+  anchorSlide: function(event, element) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    var elem = $(element).attr('href');
+    var target = $(elem).offset().top;
+
+    $('html, body').animate({
+      scrollTop: target
+    }, 1000);
+  },
   showTarget: function(element) {
     var target = $(element).data('target');
     var animation = $(element).data('animation') || 'fadeIn';
@@ -98,8 +109,11 @@ $('#main-menu').on('click', 'li', function() {
   EB.menuClick(this);
 });
 $('#main-menu').on('click', 'a', function(e) {
-  if($(window).innerWidth() > 991) {
+  if ($(window).innerWidth() > 991) {
     e.preventDefault();
+  }
+  else {
+    EB.anchorSlide(e, this);
   }
 });
 $('.cloud .arrow, #contact-us').on('click touchend', function() {
