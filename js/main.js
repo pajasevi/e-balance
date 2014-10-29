@@ -25,7 +25,9 @@ var EB = {
     });
   },
   destroyCarousel: function() {
-    owl.data('owlCarousel').destroy();
+    if (owl !== undefined && owl.data('owlCarousel') !== undefined) {
+      owl.data('owlCarousel').destroy();
+    }
   },
   loadJump: function() {
     var section = EB.getURLParam(window.location, 'section');
@@ -84,15 +86,13 @@ $(window).on('load', function() {
   EB.loadJump();
 });
 $(window).on('resize', function() {
-  setTimeout(function() {
-    if ($(window).innerWidth() > 991) {
-      window.location.hash= '';
-      EB.initCarousel();
-    }
-    else {
-      EB.destroyCarousel();
-    }
-  }, 500);
+  if ($(window).innerWidth() > 991) {
+    window.location.hash= '';
+    EB.initCarousel();
+  }
+  else {
+    EB.destroyCarousel();
+  }
 });
 $('#main-menu').on('click', 'li', function() {
   EB.menuClick(this);
