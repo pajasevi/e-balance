@@ -73,6 +73,9 @@ $(document).ready(function() {
   if ($(window).innerWidth() > 991) {
     EB.initCarousel();
   }
+  else {
+    $('section').css('min-height', $(window).innerHeight());
+  }
 });
 $(window).on('load', function() {
   EB.loadJump();
