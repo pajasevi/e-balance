@@ -87,7 +87,7 @@ $(window).on('resize', function() {
       EB.initCarousel();
     }
     else {
-      //location.reload();
+      location.reload();
     }
   }, 500);
 });
