@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     cssmin = require('gulp-cssmin'),
     concat = require('gulp-concat'),
-    less = require('gulp-less'),
+    less = require('gulp-less');
 
 var paths = {
   scripts: 'js/main.js',

@@ -12,6 +12,10 @@ html,body {
   display: inline-block;
   width: 49%;
   vertical-align: top;
+
+  @media screen and (max-width: 602px) {
+    width: 100%;
+  }
 }
 
 .page {
@@ -19,8 +23,41 @@ html,body {
   height: 100%;
 }
 
-.arrow {
+header {
+  background: #84B00E;
+}
 
+.logo {
+  padding: 0.5em;
+  text-align: center;
+}
+
+#main-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav li {
+  padding: 0.25em;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover,
+    &.active {
+      color: #333;
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+  bottom: -1em;
+  right: -1em;
   cursor: pointer;
 
   img {
@@ -54,6 +91,15 @@ section{
   padding: 1em;
   background-repeat: no-repeat;
   background-position: center bottom;
+  background-size: cover;
+  box-shadow: 0 5px 10px #777 inset;
+
+  h2 {
+    margin-top: 0;
+    font-size: 2em;
+    font-weight: 300;
+    color: #fff;
+  }
 }
 
 #kdo-jsme {
@@ -70,6 +116,38 @@ section{
 
 #co-jsme-dokazali {
   background-image: url('../img/page4-small.png');
+}
+
+.cloud {
+  position: relative;
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 2px;
+  color: #333;
+  background-image: data-uri('../img/cloud-bg.png');
+}
+
+p.highlight {
+  margin: 10px 0;
+  font-size: 16px;
+  color: @main-color;
+}
+h3.highlight {
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: 300;
+  color: @main-color;
+}
+
+ul.list {
+  padding-left: 25px;
+
+  li{
+    padding-left: 5px;
+    list-style-image: data-uri('../img/list-icon.png');
+    font-size: 14px;
+    color: @text-color;
+  }
 }
 
 @media screen and (min-width: 991px) {
@@ -106,13 +184,17 @@ section{
       display: inline-block;
       padding: 0 10px;
       list-style: none;
-      color: #fff;
-      cursor: pointer;
-      transition: color 0.3s;
 
-      &:hover,
-      &.active {
-        color: @main-color;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover,
+        &.active {
+          color: @main-color;
+        }
       }
     }
   }
@@ -158,6 +240,7 @@ section{
       background-repeat: no-repeat;
       background-position: center top;
       background-size: cover;
+      box-shadow: none;
 
       h2 {
         font-size: 53px;
@@ -175,29 +258,6 @@ section{
         line-height: 1.5em;
         color: @text-color;
       }
-    }
-  }
-
-  p.highlight {
-    margin: 10px 0;
-    font-size: 16px;
-    color: @main-color;
-  }
-  h3.highlight {
-    margin-bottom: 5px;
-    font-size: 30px;
-    font-weight: 300;
-    color: @main-color;
-  }
-
-  ul.list {
-    padding-left: 25px;
-
-    li{
-      padding-left: 5px;
-      list-style-image: data-uri('../img/list-icon.png');
-      font-size: 14px;
-      color: @text-color;
     }
   }
 

@@ -83,15 +83,21 @@ $(window).on('load', function() {
 $(window).on('resize', function() {
   setTimeout(function() {
     if ($(window).innerWidth() > 991) {
+      window.location.hash= '';
       EB.initCarousel();
     }
     else {
-      location.reload();
+      //location.reload();
     }
   }, 500);
 });
 $('#main-menu').on('click', 'li', function() {
   EB.menuClick(this);
+});
+$('#main-menu').on('click', 'a', function(e) {
+  if($(window).innerWidth() > 991) {
+    e.preventDefault();
+  }
 });
 $('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
