@@ -30,8 +30,8 @@ var EB = {
     }
   },
   loadJump: function() {
-    var section = EB.getURLParam(window.location, 'section');
-    if (owl !== undefined) {
+    var section = EB.getURLParam(window.location, 's');
+    if (owl !== undefined && owl.data('owlCarousel') !== undefined) {
       owl.trigger('owl.jumpTo', section);
     }
   },
