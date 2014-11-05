@@ -538,16 +538,25 @@ ul.list {
     }
   }
 
-  .tooltips div {
+  .tooltip {
     position: absolute;
     display: none;
     width: 291px;
     height: 225px;
-    padding: 45px 30px 20px 25px;
+    padding: 30px 30px 20px 25px;
+    font-size: 90%;
+    text-align: center;
     background: data-uri('../img/tooltip-bg.png');
+
+    h3 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #fff;
+    }
 
     p {
       color: #fff;
+      margin: 0.8em 0;
     }
   }
 }

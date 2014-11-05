@@ -120,8 +120,8 @@ $('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
 });
 $('.camp').on('mouseover', '.tent', function() {
-  EB.tooltipShow(this)
+  EB.tooltipShow(this);
 });
 $('.camp').on('mouseout', '.tent', function() {
-  EB.tooltipHide(this)
+  EB.tooltipHide(this);
 });
