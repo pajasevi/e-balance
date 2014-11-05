@@ -191,10 +191,12 @@ ul.list {
         text-decoration: none;
         transition: color 0.3s;
 
-        &:hover,
-        &.active {
+        &:hover {
           color: @main-color;
         }
+      }
+      &.active a {
+        color: @main-color;
       }
     }
   }
