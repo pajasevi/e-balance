@@ -5,6 +5,7 @@
  */
 
 var owl;
+var navigation = ['kdo-jsme', 'co-umime', 'jak-pracujeme', 'co-jsme-dokazali'];
 
 var EB = {
   initCarousel: function() {
@@ -31,8 +32,9 @@ var EB = {
   },
   loadJump: function() {
     var section = EB.getURLParam(window.location, 's');
-    if (owl !== undefined) {
-      owl.trigger('owl.jumpTo', section);
+    var index = navigation.indexOf(section);
+    if (owl !== undefined && index > -1) {
+      owl.trigger('owl.jumpTo', index);
     }
   },
   anchorSlide: function(event, element) {
