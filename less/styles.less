@@ -13,7 +13,7 @@ html,body {
   width: 49%;
   vertical-align: top;
 
-  @media screen and (max-width: 602px) {
+  @media screen and (max-width: 37.625rem) {
     width: 100%;
   }
 }
@@ -71,8 +71,8 @@ nav li {
 
 .icon {
   display: inline-block;
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   background-position: center center;
   background-repeat: no-repeat;
 
@@ -88,15 +88,15 @@ nav li {
 }
 
 section{
-  padding: 1em;
+  padding: 1rem;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
-  box-shadow: 0 5px 10px #777 inset;
+  box-shadow: 0 0.3125rem 0.625rem #777 inset;
 
   h2 {
     margin-top: 0;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: 300;
     color: #fff;
   }
@@ -120,37 +120,37 @@ section{
 
 .cloud {
   position: relative;
-  margin: 1em 0;
-  padding: 1em;
-  border-radius: 2px;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 0.125rem;
   color: #333;
   background-image: data-uri('../img/cloud-bg.png');
 }
 
 p.highlight {
-  margin: 10px 0;
-  font-size: 16px;
+  margin: 0.625rem 0;
+  font-size: 1rem;
   color: @main-color;
 }
 h3.highlight {
-  margin-bottom: 5px;
-  font-size: 30px;
+  margin-bottom: 0.3125rem;
+  font-size: 1.875rem;
   font-weight: 300;
   color: @main-color;
 }
 
 ul.list {
-  padding-left: 25px;
+  padding-left: 1.5625rem;
 
   li{
-    padding-left: 5px;
+    padding-left: 0.3125rem;
     list-style-image: data-uri('../img/list-icon.png');
-    font-size: 14px;
+    font-size: 0.875rem;
     color: @text-color;
   }
 }
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 767px) {
 
   header {
     position: absolute;
@@ -160,16 +160,16 @@ ul.list {
 
     .logo img {
       position: absolute;
-      top: 30px;
-      left: 55px;
+      top: 1.875rem;
+      left: 3.4375rem;
       z-index: 9999;
     }
   }
 
   nav {
     position: absolute;
-    top: 30px;
-    right: 85px;
+    top: 1.875rem;
+    right: 5.3125rem;
     z-index: 999999;
     width: 600px;
 
@@ -180,9 +180,9 @@ ul.list {
     }
 
     li {
-      font-size: 20px;
+      font-size: 1.25rem;
       display: inline-block;
-      padding: 0 10px;
+      padding: 0 0.625rem;
       list-style: none;
 
 
@@ -209,16 +209,16 @@ ul.list {
 
   .owl-controls.clickable {
     position: absolute;
-    top: 0px;
-    bottom: 0px;
-    right: 30px;
+    top: 0rem;
+    bottom: 0rem;
+    right: 1.875rem;
   }
 
   .owl-controls .owl-buttons {
     position: absolute;
-    bottom: 30px;
+    bottom: 1.875rem;
     right: 0;
-    width: 200px;
+    width: 12.5rem;
   }
   .owl-theme .owl-controls .owl-buttons div {
     background: none;
@@ -245,7 +245,7 @@ ul.list {
       box-shadow: none;
 
       h2 {
-        font-size: 53px;
+        font-size: 3.3125rem;
         font-weight: 300;
         color: #fff;
 
@@ -256,9 +256,10 @@ ul.list {
       .cloud {
         position: absolute;
         font-weight: 400;
-        font-size: 14px;
-        line-height: 1.5em;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
         color: @text-color;
+        background-size: cover;
       }
     }
   }
@@ -268,33 +269,33 @@ ul.list {
 
     h2 {
       position: absolute;
-      right: 85px;
-      top: 110px;
+      right: 5.3125rem;
+      top: 6.875rem;
     }
 
     .cloud1 {
-      right: 685px;
-      top: 230px;
-      width: 325px;
-      height: 150px;
-      padding: 15px 20px 35px 30px;
+      right: 42.8125rem;
+      top: 14.375rem;
+      width: 20.3125rem;
+      height: 9.375rem;
+      padding: 0.9375rem 1.25rem 2.1875rem 1.875rem;
       background-image: data-uri('../img/cloud1.png');
 
     }
     .cloud2 {
-      right: 395px;
-      top: 270px;
-      width: 270px;
-      height: 150px;
-      padding: 20px 20px 35px 30px;
+      right: 24.6875rem;
+      top: 16.875rem;
+      width: 16.875rem;
+      height: 9.375rem;
+      padding: 1.25rem 1.25rem 2.1875rem 1.875rem;
       background-image: data-uri('../img/cloud2.png');
     }
     .cloud3 {
-      right: 85px;
-      top: 260px;
-      width: 287px;
-      height: 147px;
-      padding: 13px 20px 10px 25px;
+      right: 5.3125rem;
+      top: 16.25rem;
+      width: 17.9375rem;
+      height: 9.1875rem;
+      padding: 0.8125rem 1.25rem 0.625rem 1.5625rem;
       background-image: data-uri('../img/cloud3.png');
     }
   }
@@ -303,40 +304,40 @@ ul.list {
 
     h2 {
       position: absolute;
-      left: 55px;
-      top: 110px;
+      left: 3.4375rem;
+      top: 6.875rem;
     }
 
     .cloud4 {
-      left: 45px;
-      top: 230px;
-      width: 613px;
-      height: 106px;
-      padding: 15px 20px 35px 20px;
+      left: 2.8125rem;
+      top: 14.375rem;
+      width: 38.3125rem;
+      height: 6.625rem;
+      padding: 0.9375rem 1.25rem 2.1875rem 1.25rem;
       background-image: data-uri('../img/cloud4.png');
     }
     .cloud5 {
-      left: 45px;
-      top: 300px;
-      width: 345px;
-      height: 188px;
-      padding: 15px 20px 35px 30px;
+      left: 2.8125rem;
+      top: 18.75rem;
+      width: 21.5625rem;
+      height: 11.75rem;
+      padding: 0.9375rem 1.25rem 2.1875rem 1.875rem;
       background-image: data-uri('../img/cloud5.png');
     }
     .cloud6 {
-      left: 370px;
-      top: 300px;
-      width: 388px;
-      height: 129px;
-      padding: 15px 20px 35px 30px;
+      left: 23.125rem;
+      top: 18.75rem;
+      width: 24.25rem;
+      height: 8.0625rem;
+      padding: 0.9375rem 1.25rem 2.1875rem 1.875rem;
       background-image: data-uri('../img/cloud6.png');
     }
     .cloud7 {
-      right: 50px;
-      top: 230px;
-      width: 438px;
-      height: 191px;
-      padding: 5px 10px 35px 50px;
+      right: 3.125rem;
+      top: 14.375rem;
+      width: 27.375rem;
+      height: 11.9375rem;
+      padding: 0.3125rem 0.625rem 2.1875rem 3.125rem;
       background-image: data-uri('../img/cloud7.png');
     }
   }
@@ -344,57 +345,57 @@ ul.list {
     background-image: url('../img/page3.png');
 
     .cloud8 {
-      left: 40px;
-      top: 147px;
-      width: 771px;
-      height: 133px;
-      padding: 5px 20px 35px 30px;
+      left: 2.5rem;
+      top: 9.1875rem;
+      width: 48.1875rem;
+      height: 8.3125rem;
+      padding: 0.3125rem 1.25rem 2.1875rem 1.875rem;
       background-image: data-uri('../img/cloud8.png');
     }
     .cloud9 {
-      left: 40px;
-      top: 290px;
-      width: 499px;
-      height: 98px;
-      padding: 32px 10px 35px 11px;
+      left: 2.5rem;
+      top: 18.125rem;
+      width: 31.1875rem;
+      height: 6.125rem;
+      padding: 2rem 0.625rem 2.1875rem 0.6875rem;
       background-image: data-uri('../img/cloud9.png');
     }
     .cloud10 {
-      left: 40px;
-      top: 370px;
-      width: 342px;
-      height: 228px;
-      padding: 15px 20px 35px 30px;
+      left: 2.5rem;
+      top: 23.125rem;
+      width: 21.375rem;
+      height: 14.25rem;
+      padding: 0.9375rem 1.25rem 2.1875rem 1.875rem;
       background-image: data-uri('../img/cloud10.png');
 
       .arrow {
-        right: 5px;
+        right: 0.3125rem;
         position: absolute;
-        bottom: 10px;
+        bottom: 0.625rem;
         z-index: 999;
       }
     }
     .cloud11 {
-      left: 350px;
-      top: 400px;
-      width: 348px;
-      height: 220px;
-      padding: 15px 20px 35px 40px;
+      left: 21.875rem;
+      top: 25rem;
+      width: 21.75rem;
+      height: 13.75rem;
+      padding: 0.9375rem 1.25rem 2.1875rem 2.5rem;
       background-image: data-uri('../img/cloud11.png');
 
       .arrow {
-        right: -15px;
+        right: -0.9375rem;
         position: absolute;
-        bottom: 30px;
+        bottom: 1.875rem;
         z-index: 999;
       }
     }
     .cloud12 {
-      left: 665px;
-      top: 370px;
-      width: 397px;
-      height: 207px;
-      padding: 15px 20px 35px 40px;
+      left: 41.5625rem;
+      top: 23.125rem;
+      width: 24.8125rem;
+      height: 12.9375rem;
+      padding: 0.9375rem 1.25rem 2.1875rem 2.5rem;
       background-image: data-uri('../img/cloud12.png');
     }
   }
@@ -403,26 +404,26 @@ ul.list {
     background-position: right top;
 
     .cloud13 {
-      left: 40px;
-      top: 120px;
-      width: 662px;
-      height: 118px;
-      padding: 15px 20px 35px 20px;
+      left: 2.5rem;
+      top: 7.5rem;
+      width: 41.375rem;
+      height: 7.375rem;
+      padding: 0.9375rem 1.25rem 2.1875rem 1.25rem;
       background-image: data-uri('../img/cloud13.png');
     }
     .cloud14 {
-      left: 40px;
-      top: 280px;
+      left: 2.5rem;
+      top: 17.5rem;
       z-index: 1;
-      width: 281px;
-      height: 61px;
-      padding: 20px 15px;
+      width: 17.5625rem;
+      height: 3.8125rem;
+      padding: 1.25rem 0.9375rem;
       background-image: data-uri('../img/cloud14.png');
 
       h2 {
         margin: 0;
-        padding-right: 30px;
-        font-size: 23px;
+        padding-right: 1.875rem;
+        font-size: 1.4375rem;
         font-weight: 400;
         color: #fff;
         text-transform: uppercase;
@@ -432,11 +433,11 @@ ul.list {
     }
     .cloud15 {
       display: none;
-      left: 40px;
-      top: 325px;
-      width: 518px;
-      height: 236px;
-      padding: 0 20px 35px 20px;
+      left: 2.5rem;
+      top: 20.3125rem;
+      width: 32.375rem;
+      height: 14.75rem;
+      padding: 0 1.25rem 2.1875rem 1.25rem;
       background-image: data-uri('../img/cloud15.png');
 
       a {
@@ -453,11 +454,11 @@ ul.list {
 
       .tel,
       .mail {
-        line-height: 38px;
+        line-height: 2.375rem;
       }
 
       .dic {
-        padding-left: 30px;
+        padding-left: 1.875rem;
       }
     }
   }
@@ -485,12 +486,12 @@ ul.list {
 
       &:hover::after {
         position: absolute;
-        bottom: -4px;
+        bottom: -0.25rem;
         z-index: 2;
         display: block;
         content: "";
         width: 100%;
-        height: 10px;
+        height: 0.625rem;
         background: rgba(100,100,100, 0.4);
         border-radius: 50%;
       }
@@ -507,7 +508,7 @@ ul.list {
       }
       &.red {
         left: 25%;
-        bottom: 10px;
+        bottom: 0.625rem;
 
         div {
           width: 100%;
@@ -517,7 +518,7 @@ ul.list {
       }
       &.green {
         left: 50%;
-        bottom: 10px;
+        bottom: 0.625rem;
 
         div {
           width: 100%;
@@ -541,12 +542,13 @@ ul.list {
   .tooltip {
     position: absolute;
     display: none;
-    width: 291px;
-    height: 225px;
-    padding: 30px 30px 20px 25px;
-    font-size: 90%;
+    width: 18.1875rem;
+    height: 14.0625rem;
+    padding: 1.875rem 1.875rem 1.25rem 1.5625rem;
+    font-size: 0.8rem;
     text-align: center;
     background: data-uri('../img/tooltip-bg.png');
+    background-size: cover;
 
     h3 {
       margin: 0;
@@ -558,5 +560,27 @@ ul.list {
       color: #fff;
       margin: 0.8em 0;
     }
+  }
+}
+
+@media screen and (max-width: 78.125rem) {
+  html,body {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 68.75rem) {
+  html,body {
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 61.9375rem) {
+  html,body {
+    font-size: 70%;
+  }
+}
+@media screen and (max-width: 47.9375rem) {
+  html,body {
+    font-size: 100%;
   }
 }

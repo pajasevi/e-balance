@@ -86,7 +86,7 @@ var EB = {
  * @event handling
  */
 $(document).ready(function() {
-  if ($(window).innerWidth() > 991) {
+  if ($(window).innerWidth() > 767) {
     EB.initCarousel();
   }
   else {
@@ -97,7 +97,7 @@ $(window).on('load', function() {
   EB.loadJump();
 });
 $(window).on('resize', function() {
-  if ($(window).innerWidth() > 991) {
+  if ($(window).innerWidth() > 767) {
     window.location.hash= '';
     EB.initCarousel();
   }
@@ -109,7 +109,7 @@ $('#main-menu').on('click', 'li', function() {
   EB.menuClick(this);
 });
 $('#main-menu').on('click', 'a', function(e) {
-  if ($(window).innerWidth() > 991) {
+  if ($(window).innerWidth() > 767) {
     e.preventDefault();
   }
   else {
