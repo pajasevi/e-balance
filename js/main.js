@@ -31,7 +31,7 @@ var EB = {
   },
   loadJump: function() {
     var section = EB.getURLParam(window.location, 's');
-    if (owl !== undefined && owl.data('owlCarousel') !== undefined) {
+    if (owl !== undefined) {
       owl.trigger('owl.jumpTo', section);
     }
   },

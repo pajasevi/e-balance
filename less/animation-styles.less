@@ -53,14 +53,14 @@
 	-webkit-animation-name: hover-flow;
 	-webkit-animation-duration: 1.5s;
 	-webkit-animation-timing-function: ease;
-	-webkit-animation-delay: 0;
+	-webkit-animation-delay: 0!important;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-play-state: running;
 	/* Standard syntax */
 	animation-name: hover-flow;
 	animation-duration: 1.5s;
 	animation-timing-function: ease;
-	animation-delay: 0;
+	animation-delay: 0!important;
 	animation-iteration-count: infinite;
 	animation-play-state: running;
 }
@@ -80,4 +80,36 @@
 	animation-delay: 0;
 	animation-iteration-count: infinite;
 	animation-play-state: running;
+}
+
+.tent {
+    /* Webkit syntax */
+    -webkit-animation-name: scaling;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    /* Standard syntax */
+    animation-name: scaling;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+
+    &.yellow {
+        -webkit-animation-delay: 0;
+        animation-delay: 0;
+    }
+    &.red {
+        -webkit-animation-delay: .2s;
+        animation-delay: .2s;
+    }
+    &.green {
+        -webkit-animation-delay: .45s;
+        animation-delay: .45s;
+    }
+    &.blue {
+        -webkit-animation-delay: .75s;
+        animation-delay: .75s;
+    }
 }
