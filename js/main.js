@@ -118,6 +118,9 @@ $('#main-menu').on('click', 'a', function(e) {
     EB.anchorSlide(e, this);
   }
 });
+$('.logo').on('click', function() {
+  owl.trigger('owl.goTo', 0);
+});
 $('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
 });
