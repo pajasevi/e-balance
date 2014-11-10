@@ -59,7 +59,12 @@ var EB = {
     var elBottom = $(element).offset().top + $(element).outerHeight();
     var elCenter = $(element).offset().left + $(element).outerWidth() - ($(tooltip).outerWidth()/2) - 20;
 
-    $(tooltip).css({'top': elBottom + 'px', 'left': elCenter + 'px'}).show().addClass('fadeIn');
+    $(tooltip).css({
+      'top': elBottom + 'px',
+      'left': elCenter + 'px'
+      })
+      .show()
+      .addClass('fadeIn');
   },
   tooltipHide: function(element) {
     var tooltip = $(element).data('tooltip');
