@@ -6,6 +6,11 @@
 
 var owl;
 var navigation = ['kdo-jsme', 'co-umime', 'jak-pracujeme', 'co-jsme-dokazali'];
+var isNotScrolled = true;
+
+setInterval(function() {
+  isNotScrolled = true;
+}, 3000);
 
 var EB = {
   initCarousel: function() {
@@ -92,6 +97,27 @@ var EB = {
 /**
  * @event handling
  */
+if ($(window).innerWidth() > 767) {
+  addWheelListener( window, function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if(isNotScrolled) {
+
+      var scrolled = e.deltaY;
+
+      if (scrolled >= 1) {
+        owl.trigger('owl.next');
+        isNotScrolled = false;
+      }
+      if (scrolled <= -1) {
+        owl.trigger('owl.prev');
+        isNotScrolled = false;
+      }
+    }
+  });
+}
+
 $(document).ready(function() {
   if ($(window).innerWidth() > 767) {
     EB.initCarousel();

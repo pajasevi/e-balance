@@ -10,7 +10,7 @@ var paths = {
 };
 
 gulp.task('javascript', function () {
-   gulp.src('js/main.js')
+   gulp.src(['js/wheellistener.js','js/main.js'])
       .pipe(uglify())
       .pipe(concat('main.min.js'))
       .pipe(gulp.dest('js'))
