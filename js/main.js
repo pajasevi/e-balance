@@ -60,16 +60,25 @@ var EB = {
     $(target).show().addClass(animation);
   },
   tooltipShow: function(element) {
-    var tooltip = $(element).data('tooltip')
-    var elBottom = $(element).offset().top + $(element).outerHeight();
-    var elCenter = $(element).offset().left + $(element).outerWidth() - ($(tooltip).outerWidth()/2) - 20;
+    if($(element).data('tooltip')) {
+      var tooltip = $(element).data('tooltip');
+      var elBottom = $(element).offset().top + $(element).outerHeight();
+      var elCenter = $(element).offset().left + $(element).outerWidth() - ($(tooltip).outerWidth()/2) - 20;
 
-    $(tooltip).css({
-      'top': elBottom + 'px',
-      'left': elCenter + 'px'
-      })
-      .show()
-      .addClass('fadeIn');
+      $('.tooltip').hide();
+      $(tooltip).css({
+        'top': elBottom + 'px',
+        'left': elCenter + 'px'
+        })
+        .show()
+        .addClass('fadeIn');
+    }
+    else {
+      var tooltip = element;
+
+      $('.tooltip').hide();
+      $(tooltip).show();
+    }
   },
   tooltipHide: function(element) {
     var tooltip = $(element).data('tooltip');
@@ -157,9 +166,9 @@ $('.logo').on('click', function() {
 $('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
 });
-$('.camp').on('mouseover', '.tent', function() {
+$('.tent, .tooltip').on('mouseover', function() {
   EB.tooltipShow(this);
 });
-$('.camp').on('mouseout', '.tent', function() {
+$('.tent, .tooltip').on('mouseout', function() {
   EB.tooltipHide(this);
 });
