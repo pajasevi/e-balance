@@ -81,7 +81,7 @@ var EB = {
     }
   },
   tooltipHide: function(element) {
-    var tooltip = $(element).data('tooltip');
+    var tooltip = $(element).data('tooltip') || element;
 
     $(tooltip).hide();
   },
@@ -170,5 +170,7 @@ $('.tent, .tooltip').on('mouseover', function() {
   EB.tooltipShow(this);
 });
 $('.tent, .tooltip').on('mouseout', function() {
-  EB.tooltipHide(this);
+  if(e.relatedTarget.nodeName === 'SECTION') {
+    EB.tooltipHide(this);
+  }
 });
