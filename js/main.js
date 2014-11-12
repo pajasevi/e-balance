@@ -166,12 +166,12 @@ $('.logo').on('click', function() {
 $('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
 });
-$('.tent, .tooltip').on('mouseover', function() {
+$('.tent, .tooltip').on('mouseenter', function() {
   if ($(window).innerWidth() > 767) {
     EB.tooltipShow(this);
   }
 });
-$('.tent, .tooltip').on('mouseout', function() {
+$('.tent, .tooltip').on('mouseleave', function(e) {
   if ($(window).innerWidth() > 767) {
     if(e.relatedTarget.nodeName === 'SECTION') {
       EB.tooltipHide(this);
