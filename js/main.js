@@ -167,10 +167,14 @@ $('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
 });
 $('.tent, .tooltip').on('mouseover', function() {
-  EB.tooltipShow(this);
+  if ($(window).innerWidth() > 767) {
+    EB.tooltipShow(this);
+  }
 });
 $('.tent, .tooltip').on('mouseout', function() {
-  if(e.relatedTarget.nodeName === 'SECTION') {
-    EB.tooltipHide(this);
+  if ($(window).innerWidth() > 767) {
+    if(e.relatedTarget.nodeName === 'SECTION') {
+      EB.tooltipHide(this);
+    }
   }
 });
