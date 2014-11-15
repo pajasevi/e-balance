@@ -108,8 +108,6 @@ var EB = {
  */
 if ($(window).innerWidth() > 767) {
   addWheelListener( window, function(e) {
-    e.preventDefault();
-    e.stopPropagation();
 
     if(isNotScrolled) {
 

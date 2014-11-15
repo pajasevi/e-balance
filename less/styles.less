@@ -158,6 +158,7 @@ ul.list {
 }
 
 .tooltip {
+  display: block;
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 2px;
@@ -167,6 +168,17 @@ ul.list {
   p,
   a {
     color: #fff;
+  }
+}
+
+.logo-small,
+.skull-small {
+  display: none;
+}
+
+@media screen and (max-width: 766px) {
+  .tooltip {
+    display: block!important;
   }
 }
 
@@ -240,6 +252,11 @@ ul.list {
     right: 0;
     width: 12.5rem;
   }
+
+  .owl-buttons img {
+    width: 3rem;
+  }
+
   .owl-theme .owl-controls .owl-buttons div {
     background: none;
     opacity: 0.8;
@@ -250,6 +267,10 @@ ul.list {
       opacity: 0.3;
       transition: none;
     }
+  }
+
+  .arrow img {
+    width: 3rem;
   }
 
   .content {
@@ -502,6 +523,22 @@ ul.list {
         transform: rotate(-10deg) translateX(1.5rem);
       }
     }
+  }
+
+  .logo-small {
+    position: absolute;
+    left: 58%;
+    bottom: 74%;
+    display: inline-block;
+    width: 2rem;
+  }
+
+  .skull-small {
+    position: absolute;
+    left: 82%;
+    bottom: 63%;
+    display: inline-block;
+    width: 2rem;
   }
 
   .camp {
