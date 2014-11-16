@@ -10,7 +10,12 @@ var paths = {
 };
 
 gulp.task('javascript', function () {
-   gulp.src(['js/wheellistener.js','js/main.js'])
+   gulp.src([
+     'js/jquery-2.1.1.min.js',
+     'js/owl.carousel.min.js',
+     'js/jquery.mousewheel.js',
+     'js/main.js'
+     ])
       .pipe(uglify())
       .pipe(concat('main.min.js'))
       .pipe(gulp.dest('js'))

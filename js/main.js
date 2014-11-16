@@ -4,17 +4,11 @@
  * Applications controlling the page behavior.
  */
 
-var owl;
+var owl = $('.content');
 var navigation = ['kdo-jsme', 'co-umime', 'jak-pracujeme', 'co-jsme-dokazali'];
-var isNotScrolled = true;
-
-setInterval(function() {
-  isNotScrolled = true;
-}, 3000);
 
 var EB = {
   initCarousel: function() {
-    owl = $('.content');
 
     owl.owlCarousel({
       navigation : true,
@@ -106,24 +100,14 @@ var EB = {
 /**
  * @event handling
  */
-if ($(window).innerWidth() > 767) {
-  addWheelListener( window, function(e) {
-
-    if(isNotScrolled) {
-
-      var scrolled = e.deltaY;
-
-      if (scrolled >= 1) {
+owl.on('mousewheel', '.owl-wrapper', function (e) {
+    if (e.deltaY>0) {
         owl.trigger('owl.next');
-        isNotScrolled = false;
-      }
-      if (scrolled <= -1) {
+    } else {
         owl.trigger('owl.prev');
-        isNotScrolled = false;
-      }
     }
-  });
-}
+    e.preventDefault();
+});
 
 $(document).ready(function() {
   if ($(window).innerWidth() > 767) {
