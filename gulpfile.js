@@ -12,7 +12,7 @@ var paths = {
 gulp.task('javascript', function () {
    gulp.src([
      'js/jquery-2.1.1.min.js',
-     'js/owl.carousel.min.js',
+     'js/owl.carousel.js',
      'js/jquery.mousewheel.js',
      'js/main.js'
      ])

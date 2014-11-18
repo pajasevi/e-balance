@@ -19,6 +19,7 @@ var EB = {
       rewindNav: false,
       navigationText: ['<img src="img/sipka2.png">', '<img src="img/sipka.png">'],
       addClassActive: true,
+      mouseDrag: false,
       afterAction: function() {
         EB.carouselChange(this);
         owl.off('mousewheel');
