@@ -142,7 +142,7 @@ $(window).on('resize', function() {
   }
   else {
     EB.destroyCarousel();
-    
+
     $(window).off('mousewheel');
   }
 });
@@ -164,6 +164,9 @@ $('.logo').on('click', function() {
 });
 $('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
+});
+$('.cloud9 .arrow').on('click', function() {
+  $(this).hide();
 });
 $('.tent, .tooltip').on('mouseenter', function() {
   if ($(window).innerWidth() > 767) {
