@@ -165,7 +165,7 @@ $('.logo').on('click', function() {
 $('.cloud .arrow, #contact-us').on('click touchend', function() {
   EB.showTarget(this);
 });
-$('.cloud9 .arrow').on('click', function() {
+$('.cloud9 .arrow').on('click touchend', function() {
   $(this).hide();
 });
 $('.tent, .tooltip').on('mouseenter', function() {
